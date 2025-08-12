@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "cairoFont";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+body {
+    font-family: "cairoFont", Arial, sans-serif ;
+    background-color: #fafafa;
+}
+nav {
+    background-color: white ;
+}
+a {
+    color:#000;
+    text-decoration: none ;
+    margin: 0 ;
+    padding: 0 ;
+}
+/*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع*/
+button {
+    background-color: transparent ;
+    color: #bf40bf !important;
+    border-color: #bf40bf !important;
+}
+/*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع عند مرور مؤشر الفأرة على الزر*/
+button:hover {
+    color: #fff !important;
+    background-color: #bf40bf !important;
+}
+.navbar-brand {
+    font-size: 30px ;
+    font-weight: bold ;
+}
+.nav-item {
+    margin: 20px ;
+    font-size: 18px ;
+}
+.nav-item.active {
+    background-color: #c23ebd ;
+}
+
+.nav-item.active .nav-link {
+    color: white !important;
+}
+.nav-item:hover {
+    background-color: #c23ebd ;
+}
+.nav-item:hover .nav-link {
+    color: white ;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+
+
+#login {
+    text-decoration: none;
+}
