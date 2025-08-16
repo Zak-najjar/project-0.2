@@ -6,6 +6,9 @@ body {
     font-family: "cairoFont", Arial, sans-serif ;
     background-color: #fafafa;
 }
+.top-menu {
+    background-color: white;
+}
 nav {
     background-color: white ;
 }
@@ -16,13 +19,13 @@ a {
     padding: 0 ;
 }
 /*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع*/
-button {
+button:not(#side-button) {
     background-color: transparent ;
     color: #bf40bf !important;
     border-color: #bf40bf !important;
 }
 /*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع عند مرور مؤشر الفأرة على الزر*/
-button:hover {
+button:hover:not(#side-button) {
     color: #fff !important;
     background-color: #bf40bf !important;
 }
@@ -56,4 +59,59 @@ button:hover {
 
 #login {
     text-decoration: none;
+}
+
+
+.body-content {
+    margin-top: 125px;
+}
+
+
+#channel-image {
+    width: 30px;
+}
+.card a:hover {
+    text-decoration: none;
+}
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .card-title {
+    height: 50px;
+    overflow: hidden;
+}
+.card .image-container {
+    position: relative;
+
+}
+.card .card-img-top {
+    display: block;
+
+}
+.card .time-video {
+    color: white;
+    background-color: black !important;
+    width: fit-content;
+    padding: 0px 2px 0 2px;
+    font-size: 15px;
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+}
+
+.card .image-container i {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: rgba(71, 70, 70, 0.815);
+    display: none;
+}
+
+.card:hover .image-container i {
+    display: block;
 }
