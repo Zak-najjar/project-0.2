@@ -115,3 +115,10 @@ button:hover:not(#side-button) {
 .card:hover .image-container i {
     display: block;
 }
+#search a {
+    text-decoration: none;
+}
+
+.filter-items a {
+    text-decoration: none;
+}

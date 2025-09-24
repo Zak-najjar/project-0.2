@@ -15,7 +15,7 @@
         <nav class=" navbar  fixed-top navbar-light bg-light rtl d-flex justify-content-between" >
             <button class="navbar-toggler" id="side-button" type="button">
             <span class="navbar-toggler-icon"></span>
-        </button>
+>        </button>
         <a class="navbar-brand d-flex align-items-center mx-2" href="index.html">يوتيوبي<i class="fa-brands fa-2x  fa-youtube " style="color: #c23ebd;"></i></a>
         <ul class="navbar-nav mx-lg-auto px-0  d-none d-lg-block  ">
             <li class="nav-item active my-0 mr-3 ml-1 px-3 py-2">
@@ -28,11 +28,11 @@
                 <a class="nav-link" href="#">الفيديوهات الرائجة</a>
             </li>
             </ul>
-        <div class="w-20 d-flex align-items-center">
-            <i class="fas fa-search search-icon d-sm-block d-xl-none" style="color: #c23ebd;"></i>
+        <div class="w-20 d-flex align-items-center" id="search">
+            <a href="search.html" class="search-icon"><i class="fas fa-search search-icon d-sm-block d-xl-none" style="color: #c23ebd;"></i></a>
             <form class="form-inline my-2 my-lg-0 d-flex ">
                 <input class="form-control d-xl-block d-none" type="search">
-                <button class="btn btn-outline-success mx-1 my-2 d-xl-block d-none" type="submit">ابحث</button>
+                <button  onclick="location.href='search.html'" class="btn btn-outline-success mx-1 my-2 d-sm-block d-none" type="submit">ابحث</button>
                 <a class=" d-block mx-2" data-toggle="modal" data-target="#loginModel" href="" id="login" style="color: #c23ebd;" >تسجيل دخول</a>
             </form>
         </div>
