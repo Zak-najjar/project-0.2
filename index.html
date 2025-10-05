@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,11 @@
 <link rel="stylesheet" href="css/bootstrap-rtl.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>يوتيوبي</title>
 </head>
-<body on>
-    <div class="top-menu " >
-        <nav class=" navbar  fixed-top navbar-light bg-light rtl d-flex justify-content-between" >
+<body>
+    <div class="top-menu">
+        <nav class=" navbar fixed-top navbar-light bg-light rtl d-flex justify-content-between" >
         <button class="navbar-toggler" id="side-button" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,15 +49,15 @@
                 <form id="loginform">
                 <div class="form-group">
                     <label for="email">البريد الالكتروني:</label>
-                    <input type="email" class="form-control" id="email" >
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="pass">Password:</label>
-                    <input type="password" class="form-control" id="pass">
+                    <input type="password" class="form-control" id="pass" name="pass">
                     <small id="passHelp" class="form-text text-muted">تجنب ان يكون في الباسوورد : $,%,^,&,* ويجب ان يكون اقل كلمة مرور 10 احرف</small>
                 </div>
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input mr-0" id="Check1">
+                    <input type="checkbox" class="form-check-input mr-0" id="Check1" name="check1">
                     <label class="form-check-label" for="Check1"><a href="#">قد قراءت قوانين الموقع</a></label>
                 </div>
                 </form>
@@ -72,6 +71,7 @@
         </div>
         </div>
     </div>
+    
     <div class="body-content rtl ">
         <h4 class="my-5 " id="sug-vid">الفيديوهات المقترحة</h4>
     <div class="row mx-2">
@@ -269,10 +269,65 @@
         </div>
     </div>
     </div>
-    <script src="js/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/script.js"></script>
+<script>
+$(function(){
+    // custom validator لمنع الأحرف الممنوعة في الباسوورد
+    $.validator.addMethod("noForbiddenChars", function(value, element) {
+        return this.optional(element) || !/[$%\^&*]/.test(value);
+    }, "لا يسمح باستخدام الأحرف $ % ^ & *");
+
+    $("#loginform").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            pass: {
+                required: true,
+                minlength: 10,
+                noForbiddenChars: true
+            },
+            check1: {
+                required: true
+            }
+        },
+        messages: {
+            email: {
+                required: 'يجب عليك إدخال الإيميل',
+                email: 'يجب أن يكون إيميل صحيح'
+            },
+            pass: {
+                required: 'يجب عليك إدخال كلمة المرور',
+                minlength: 'يجب أن تكون كلمة المرور 10 أحرف على الأقل'
+            },
+            check1: {
+                required: 'يجب الموافقة على قوانين الموقع'
+            }
+        },
+        submitHandler: function(form) {
+            // مثال إرسال AJAX
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos",
+                type: "POST",
+                data: $(form).serialize(),
+                success: function(response) {
+                    alert("تم الإرسال بنجاح!");
+                    form.reset();
+                    // إغلاق المودال لو حابب:
+                    $('#loginModel').modal('hide');
+                },
+                error: function() {
+                    alert("حدث خطأ أثناء الإرسال ❌");
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
 
