@@ -269,15 +269,17 @@
         </div>
     </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+
 <script>
 $(function(){
     // custom validator لمنع الأحرف الممنوعة في الباسوورد
     $.validator.addMethod("noForbiddenChars", function(value, element) {
-        return this.optional(element) || !/[$%\^&*]/.test(value);
+        return this.optional(element) || !/[$%^&*]/.test(value);
     }, "لا يسمح باستخدام الأحرف $ % ^ & *");
 
     $("#loginform").validate({
@@ -305,25 +307,59 @@ $(function(){
                 minlength: 'يجب أن تكون كلمة المرور 10 أحرف على الأقل'
             },
             check1: {
-                required: 'يجب الموافقة على قوانين الموقع'
+                required: ''
+            }
+        },
+        errorPlacement: function(error, element) {
+            if (element.attr("name") == "check1") {
+                // للـ checkbox خلي البوردر أحمر بس
+                element.addClass('border-danger');
+            } else {
+                // للـ email و pass حط المسج جوا الحقل
+                error.addClass('d-inline-block position-absolute');
+                error.css({
+                    'font-size': '12px',
+                    'color': '#dc3545',
+                    'top': '50%',
+                    'transform': 'translateY(-50%)',
+                    'right': '10px',
+                    'background': 'white',
+                    'padding': '0 5px',
+                    'opacity': '1;'
+                });
+                element.parent().css('position', 'relative');
+                element.after(error);
+            }
+        },
+        success: function(label, element) {
+            // لما يصير صح، شيل الأحمر من الـ checkbox
+            if ($(element).attr("name") == "check1") {
+                $(element).removeClass('border-danger');
             }
         },
         submitHandler: function(form) {
-            // مثال إرسال AJAX
-            $.ajax({
-                url: "https://jsonplaceholder.typicode.com/todos",
-                type: "POST",
-                data: $(form).serialize(),
-                success: function(response) {
-                    alert("تم الإرسال بنجاح!");
-                    form.reset();
-                    // إغلاق المودال لو حابب:
-                    $('#loginModel').modal('hide');
-                },
-                error: function() {
-                    alert("حدث خطأ أثناء الإرسال ❌");
-                }
-            });
+            if ($("#loginform").valid()) {
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/todos",
+                    type: "POST",
+                    data: $(form).serialize(),
+                    success: function(response) {
+                        alert("تم الإرسال بنجاح!");
+                        form.reset();
+                        $('#loginModel').modal('hide');
+                    },
+                    error: function() {
+                        alert("حدث خطأ أثناء الإرسال ❌");
+                    }
+                });
+            }
+        }
+    });
+    
+    $("#loginform").on("submit", function(e) {
+        if (!$(this).valid()) {
+            e.preventDefault();
+            return false;
         }
     });
 });
