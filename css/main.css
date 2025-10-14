@@ -8,10 +8,7 @@ body {
 
 }
 .top-menu {
-    background-color: white;
-}
-nav {
-    background-color: white ;
+    background-color: #fff  !important;
 }
 a {
     color:#000;
@@ -32,12 +29,10 @@ button:hover:not(#side-button) {
     background-color: #bf40bf !important;
 }
 .navbar-brand {
-    font-size: 30px ;
     font-weight: bold ;
 }
-.nav-item {
-    margin: 20px ;
-    font-size: 18px ;
+nav {
+    background-color: #fff !important;
 }
 .nav-item.active {
     background-color: #c23ebd ;
@@ -57,7 +52,10 @@ button:hover:not(#side-button) {
     color: white !important;
 }
 
-
+.nav-link {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 #login {
     text-decoration: none;
@@ -117,6 +115,17 @@ button:hover:not(#side-button) {
 .card:hover .image-container i {
     display: block;
 }
+.search-icon {
+    margin-left: 2rem;
+    padding: 18px;
+    justify-content: center;
+    align-items: center;
+}
+.search-icon:hover {
+    background-color: #bf40bf !important;
+    color: white !important;
+    cursor: pointer;
+}
 #search a {
     text-decoration: none;
 }
@@ -126,3 +135,31 @@ button:hover:not(#side-button) {
 }
 
 
+@media (min-width: 1200px) {
+    #searchinput {
+        display: block !important;
+}
+}
+@media (max-width: 1200px) {
+    #searchinput {
+        position: absolute;
+        display: none ;
+        width: 100%;
+        top: 100%;
+        left: 0.01%;
+        z-index: 1;
+        background-color: #efeeee;
+        border: none;
+        font-size: 16px;
+        height: 70px;
+    }
+    .search-input::placeholder {
+    color: gray;
+}
+
+    .search-input:focus {
+    outline: none;
+    border: none;
+}
+
+}
