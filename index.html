@@ -369,6 +369,17 @@ $(function(){
         $('#searchinput').slideToggle(1000);
     });
 });
+
+$(function(){
+    $('#searchinput').on('keydown', function(event){
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission
+            location.href = 'search.html';
+        }
+    });
+});
+
+
 </script>
 </body>
 </html>

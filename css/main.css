@@ -79,7 +79,9 @@ nav {
 .card:hover {
     transform: translateY(-10px);
 }
-
+.card-body {
+    overflow: hidden;
+}
 .card .card-title {
     height: 50px;
     overflow: hidden;
@@ -139,6 +141,7 @@ nav {
     #searchinput {
         display: block !important;
 }
+
 }
 @media (max-width: 1200px) {
     #searchinput {
@@ -163,3 +166,18 @@ nav {
 }
 
 }
+
+#filter-items:hover {
+    color: black;
+}
+.check-filter:checked + label {
+    color: #bf40bf;
+    transition: color 0.1s ease-in-out;
+}
+
+
+
+#filter-table {
+    display: none;
+}
+
