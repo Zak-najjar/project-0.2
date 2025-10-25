@@ -30,7 +30,7 @@
         <div class="w-20 d-flex align-items-center" id="search">
             <i class="fas fa-search search-icon d-block d-xl-none d-flex" style="color: #c23ebd;"></i>
             <form class="form-inline my-2 my-lg-0 d-flex ">
-                <input id="searchinput" class="form-control" type="search" placeholder="ابحث عن ...">
+                <input id="searchinput" class="form-control" type="search">
                 <button   onclick="location.href='search.html'" class=" btn btn-outline-success mx-1 my-2 d-xl-block d-none" type="button">ابحث</button>
                 <a class=" d-block mx-2" data-toggle="modal" data-target="#loginModel" href="" id="login" style="color: #c23ebd;" >تسجيل دخول</a>
             </form>
@@ -366,6 +366,7 @@ $(function(){
 
 $(function(){
     $('.search-icon').on('click', function(){
+        $('#searchinput').attr('placeholder' , 'ابحث عن...')
         $('#searchinput').slideToggle(1000);
     });
 });

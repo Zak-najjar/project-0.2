@@ -77,7 +77,7 @@ nav {
     transition: transform 0.3s ease-in-out;
 }
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 .card-body {
     overflow: hidden;
@@ -88,6 +88,7 @@ nav {
 }
 .card .image-container {
     position: relative;
+    display: block;
 
 }
 .card .card-img-top {
@@ -102,7 +103,7 @@ nav {
     font-size: 15px;
     position: absolute;
     left: 5px;
-    bottom: 10px;
+    bottom: 5px;
 }
 
 .card .image-container i {
@@ -181,3 +182,32 @@ nav {
     display: none;
 }
 
+
+.card-image-h {
+    position: relative;
+}
+
+.time-video-h {
+    color: white;
+    background-color: black !important;
+    width: fit-content;
+    padding: 0px 2px 0 2px;
+    font-size: 15px;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+@media (max-width: 767px) {
+    .card-image-h {
+        width: 100%;
+    }
+}
+
+
+.card-horizontal .card-body .card-text {
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
