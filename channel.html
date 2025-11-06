@@ -1,0 +1,239 @@
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discreption" content="bootstrap project">
+    <meta name="author" content="Zakarea Najjar">
+<link rel="stylesheet" href="css/bootstrap-rtl.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>يوتيوبي</title>
+</head>
+<body class="rtl">
+    <div class="top-menu">
+        <nav class=" navbar navbar-light rtl d-flex justify-content-between" >
+        <button class="navbar-toggler" id="side-button" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand d-flex align-items-center mx-2" href="index.html">يوتيوبي<i class="fa-brands fa-2x  fa-youtube " style="color: #c23ebd;"></i></a>
+        <ul class="navbar-nav mx-lg-auto px-0  d-none d-lg-block  ">
+            <li class="nav-item active my-0 mr-3 ml-1 px-3">
+                <a class="nav-link"  href="index.html" >الفيديوهات المقترحة</a>
+            </li>
+            <li class="nav-item  mr-0 ml-1 my-0 px-3">
+                <a class="nav-link" href="#">المرفوعة حديثا</a>
+            </li>
+            <li class="nav-item ml-1 my-0 px-3 ">
+                <a class="nav-link" href="#">الفيديوهات الرائجة</a>
+            </li>
+            </ul>
+        <div class="w-20 d-flex align-items-center" id="search">
+            <i class="fas fa-search search-icon d-block d-xl-none d-flex" style="color: #c23ebd;"></i>
+            <form class="form-inline my-2 my-lg-0 d-flex ">
+                <input id="searchinput" class="form-control" type="search">
+                <button   onclick="location.href='search.html'" class=" btn btn-outline-success mx-1 my-2 d-xl-block d-none" type="button">ابحث</button>
+                <a class=" d-block mx-2" data-toggle="modal" data-target="#loginModel" href="" id="login" style="color: #c23ebd;" >تسجيل دخول</a>
+            </form>
+        </div>
+            </nav>
+        <div class="modal fade mt-6 rtl"  id="loginModel" data-backdrop="static"  tabindex="-1" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModelHeader">تسجيل الدخول</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="loginform">
+                <div class="form-group">
+                    <label for="email">البريد الالكتروني:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password:</label>
+                    <input type="password" class="form-control" id="pass" name="pass">
+                    <small id="passHelp" class="form-text text-muted">تجنب ان يكون في الباسوورد : $,%,^,&,* ويجب ان يكون اقل كلمة مرور 10 احرف</small>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input mr-0" id="Check1" name="check1">
+                    <label class="form-check-label" for="Check1"><a href="#">قد قراءت قوانين الموقع</a></label>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <a href="#">انشاء حساب</a>
+                <a href="#">نسيت كلمة المرور</a>
+                <button type="submit" class="btn" form="loginform">دخول</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <div class="channel-content">
+        <div class="container-fluid">
+            <div class="banner position-relative">
+                <img class="img-fluid" src="img/h-channel.jpg" alt="banner">
+                <div class="social-media p-1 bg-secondary position-absolute">
+                    <a href="#" title="اكاديمية حسوب" class="mr-2">
+                        <img src="img/icons/hsoub.png" alt="تويتر">
+                        اكاديمية حسوب
+                    </a>
+                    <a href="#" title="تابعونا على تويتر" class="mr-2">
+                        <img src="img/icons/twitter.png" alt="تويتر">
+                    </a>
+                    <a href="#" title="تابعونا على فيسبوك" class="mr-2">
+                        <img src="img/icons/facebook.png" alt="فيسبوك">
+                    </a>
+                    <a href="#" title="تابعونا على موقع حاسوب" >
+                        <img src="img/icons/hsoub-web.png" alt="حسوب">
+                    </a>
+                </div>
+                <button type="button" class="btn subscribe position-absolute">اشتراك 2650</button>
+            </div>
+        </div>
+        <div class="container-fluid bg-light">
+                <nav class=" navbar navbar-light rtl d-flex justify-content-between" >
+                <ul class="navbar-nav mx-lg-auto px-0  d-none d-lg-block  ">
+                    <li class="nav-item active my-0 ml-1 px-1">
+                        <a class="nav-link"  href="#" >الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item ml-1 my-0 px-1">
+                        <a class="nav-link" href="#">فيديوهاتي</a>
+                    </li>
+                    <li class="nav-item ml-1 my-0 px-1 ">
+                        <a class="nav-link" href="#">قوائم التشغيل</a>
+                    </li>
+                    <li class="nav-item ml-1 my-0 px-1 ">
+                        <a class="nav-link" href="#">القنوات</a>
+                    </li>
+                    <li class="nav-item ml-1 my-0 px-1 ">
+                        <a class="nav-link" href="#">مناقشة</a>
+                    </li>
+                    <li class="nav-item ml-1 my-0 px-1 ">
+                        <a class="nav-link" href="#">حول</a>
+                    </li>
+                </ul>
+                </nav>
+        </div>
+
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+$(function(){
+    // custom validator لمنع الأحرف الممنوعة في الباسوورد
+    $.validator.addMethod("noForbiddenChars", function(value, element) {
+        return this.optional(element) || !/[$%^&*]/.test(value);
+    }, "لا يسمح باستخدام الأحرف $ % ^ & *");
+
+    $("#loginform").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            pass: {
+                required: true,
+                minlength: 10,
+                noForbiddenChars: true
+            },
+            check1: {
+                required: true
+            }
+        },
+        messages: {
+            email: {
+                required: 'يجب عليك إدخال الإيميل',
+                email: 'يجب أن يكون إيميل صحيح'
+            },
+            pass: {
+                required: 'يجب عليك إدخال كلمة المرور',
+                minlength: 'يجب أن تكون كلمة المرور 10 أحرف على الأقل'
+            },
+            check1: {
+                required: ''
+            }
+        },
+        errorPlacement: function(error, element) {
+            if (element.attr("name") == "check1") {
+                // للـ checkbox خلي البوردر أحمر بس
+                element.addClass('border-danger');
+            } else {
+                // للـ email و pass حط المسج جوا الحقل
+                error.addClass('d-inline-block position-absolute');
+                error.css({
+                    'font-size': '12px',
+                    'color': '#dc3545',
+                    'top': '50%',
+                    'transform': 'translateY(-50%)',
+                    'right': '10px',
+                    'background': 'white',
+                    'padding': '0 5px',
+                    'opacity': '1;'
+                });
+                element.parent().css('position', 'relative');
+                element.after(error);
+            }
+        },
+        success: function(label, element) {
+            // لما يصير صح، شيل الأحمر من الـ checkbox
+            if ($(element).attr("name") == "check1") {
+                $(element).removeClass('border-danger');
+            }
+        },
+        submitHandler: function(form) {
+            if ($("#loginform").valid()) {
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/todos",
+                    type: "POST",
+                    data: $(form).serialize(),
+                    success: function(response) {
+                        alert("تم الإرسال بنجاح!");
+                        form.reset();
+                        $('#loginModel').modal('hide');
+                    },
+                    error: function() {
+                        alert("حدث خطأ أثناء الإرسال ❌");
+                    }
+                });
+            }
+        }
+    });
+    
+    $("#loginform").on("submit", function(e) {
+        if (!$(this).valid()) {
+            e.preventDefault();
+            return false;
+        }
+    });
+});
+
+$(function(){
+    $('.search-icon').on('click', function(){
+        $('#searchinput').attr('placeholder' , 'ابحث عن...')
+        $('#searchinput').slideToggle(1000);
+    });
+});
+
+$(function(){
+    $('#searchinput').on('keydown', function(event){
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission
+            location.href = 'search.html';
+        }
+    });
+});
+
+
+</script>
+</body>
+</html>
+
