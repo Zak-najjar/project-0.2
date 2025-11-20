@@ -229,3 +229,25 @@ button:hover:not(#side-button,.subscribe) {
 }
 
 
+.card-text {
+    position: relative;
+}
+
+.card-text .watch-icons {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+}
+.card-block > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-block button {
+    margin-bottom: 50px;
+}
+.watchVideoText.text-expanded {
+    white-space: inherit !important;
+}
+
