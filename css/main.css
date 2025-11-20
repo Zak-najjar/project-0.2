@@ -18,21 +18,18 @@ a {
     
 }
 /*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع*/
-button:not(#side-button) {
+button:not(#side-button,.subscribe) {
     background-color: transparent ;
     color: #bf40bf !important;
     border-color: #bf40bf !important;
 }
 /*تغيير الألوان الإفتراضية لجميع الأزرار في الموقع عند مرور مؤشر الفأرة على الزر*/
-button:hover:not(#side-button) {
+button:hover:not(#side-button,.subscribe) {
     color: #fff !important;
     background-color: #bf40bf !important;
 }
 .navbar-brand {
     font-weight: bold ;
-}
-nav {
-    background-color: #fff !important;
 }
 .nav-item.active {
     background-color: #c23ebd ;
@@ -211,3 +208,24 @@ nav {
     text-overflow: ellipsis;
     
 }
+
+
+
+.social-media {
+    bottom: 18px;
+    left: 18px;
+}
+
+.social-media > a {
+    text-decoration: none;
+}
+
+.subscribe {
+    color: white !important;
+    background-color: #c23ebd;
+    text-transform: bold;
+    bottom: 18px;
+    right: 18px;
+}
+
+
